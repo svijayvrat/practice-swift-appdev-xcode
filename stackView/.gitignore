@@ -1,0 +1,31 @@
+# Xcode
+.DS_Store
+*.pbxuser
+*.xcworkspace
+xcuserdata/
+DerivedData/
+build/
+*.xcodeproj/project.xcworkspace/
+*.xcodeproj/xcuserdata/
+*.xcodeproj/xcshareddata/
+*.xcodeproj/*.mode1v3
+*.xcodeproj/*.pbxuser
+*.xcodeproj/*.perspectivev3
+*.xcodeproj/project.xcworkspace/xcuserdata/
+*.xcodeproj/project.xcworkspace/xcshareddata/
+
+# CocoaPods
+Pods/
+.bundle/
+
+# Swift Package Manager
+.build/
+
+# Carthage
+Carthage/Build/
+
+# Other
+.swiftpm/
+.vscode/
+.idea/
+.tool-versions
