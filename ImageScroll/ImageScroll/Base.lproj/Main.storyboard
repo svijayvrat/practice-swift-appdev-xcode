@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="23727" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="23721"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="ImageScroll" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ltT-ba-ebM">
+                                <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="WrS-qv-dvE">
+                                        <rect key="frame" x="0.0" y="0.0" width="393" height="1200"/>
+                                        <subviews>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="square.and.arrow.up" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="uAZ-Tz-ybu">
+                                                <rect key="frame" x="0.0" y="55" width="393" height="276"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            </imageView>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="square.and.arrow.up.badge.checkmark" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="AEm-gi-2da">
+                                                <rect key="frame" x="0.0" y="328" width="393" height="276"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            </imageView>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="pencil.line" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="mzG-xD-LWS">
+                                                <rect key="frame" x="0.0" y="601" width="393" height="276"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            </imageView>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="trash.circle.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="gdf-Zc-36f">
+                                                <rect key="frame" x="0.0" y="875" width="393" height="276"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            </imageView>
+                                        </subviews>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="1200" id="L87-kO-83x"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="WrS-qv-dvE" firstAttribute="leading" secondItem="ltT-ba-ebM" secondAttribute="leading" id="2OH-h6-5RH"/>
+                                    <constraint firstAttribute="trailing" secondItem="WrS-qv-dvE" secondAttribute="trailing" id="6c0-pD-YDu"/>
+                                    <constraint firstAttribute="bottom" secondItem="WrS-qv-dvE" secondAttribute="bottom" id="DYR-BC-b8L"/>
+                                    <constraint firstItem="WrS-qv-dvE" firstAttribute="top" secondItem="ltT-ba-ebM" secondAttribute="top" id="esa-d5-hrp"/>
+                                    <constraint firstItem="WrS-qv-dvE" firstAttribute="width" secondItem="ltT-ba-ebM" secondAttribute="width" id="xkq-L3-6lo"/>
+                                </constraints>
+                            </scrollView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstAttribute="bottom" secondItem="ltT-ba-ebM" secondAttribute="bottom" id="Aas-iG-YQ6"/>
+                            <constraint firstItem="ltT-ba-ebM" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="BEQ-Rx-T6m"/>
+                            <constraint firstItem="ltT-ba-ebM" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="NEo-wX-nhg"/>
+                            <constraint firstItem="ltT-ba-ebM" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="hwR-lh-oK7"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="135.1145038167939" y="3.5211267605633805"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="pencil.line" catalog="system" width="128" height="117"/>
+        <image name="square.and.arrow.up" catalog="system" width="110" height="128"/>
+        <image name="square.and.arrow.up.badge.checkmark" catalog="system" width="112" height="128"/>
+        <image name="trash.circle.fill" catalog="system" width="128" height="123"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
