@@ -8,19 +8,45 @@
 import UIKit
 
 class ViewController: UIViewController {
-
+    var nums:[Int]=[]
+    var numStr:String=""
     @IBOutlet var calculatedOutput: UILabel!
-    @IBOutlet var buttonOne: UIButton!
+    @IBOutlet var buttonOneRow: [UIButton]!
+    @IBOutlet var buttonTwoRow: [UIButton]!
+    @IBOutlet var buttonThreeRow: [UIButton]!
     @IBAction func clearOutput(_ sender: Any) {
         calculatedOutput.text="0"
+        numStr=""
     }
-    @IBAction func inputNum(_ sender: Any) {
-        var num:Int=0
-        var multiplier:Int=1
-        if buttonOne.isEnabled{
-            calculatedOutput.text="1"
+    @IBAction func buttonOneRowTouched(_ sender: Any) {
+        if buttonOneRow[0].isTouchInside{
+            numStr+="1"
+        }else if buttonOneRow[1].isTouchInside{
+            numStr+="2"
+        }else{
+            numStr+="3"
         }
-        
+        calculatedOutput.text=numStr
+    }
+    @IBAction func buttonTwoRowTouched(_ sender: Any) {
+        if buttonTwoRow[0].isTouchInside{
+            numStr+="4"
+        }else if buttonTwoRow[1].isTouchInside{
+            numStr+="5"
+        }else{
+            numStr+="6"
+        }
+        calculatedOutput.text=numStr
+    }
+    @IBAction func buttonThreeRowTouched(_ sender: Any) {
+        if buttonThreeRow[0].isTouchInside{
+            numStr+="7"
+        }else if buttonThreeRow[1].isTouchInside{
+            numStr+="8"
+        }else{
+            numStr+="9"
+        }
+        calculatedOutput.text=numStr
     }
     override func viewDidLoad() {
         super.viewDidLoad()
