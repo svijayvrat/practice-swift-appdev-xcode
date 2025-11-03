@@ -67,6 +67,9 @@
                                                                 <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                 <state key="normal" title="Button"/>
                                                                 <buttonConfiguration key="configuration" style="plain" title="+/-"/>
+                                                                <connections>
+                                                                    <action selector="changeSign:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ht1-1u-pgY"/>
+                                                                </connections>
                                                             </button>
                                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1WE-GQ-BSE">
                                                                 <rect key="frame" x="197" y="0.0" width="97.666666666666686" height="87.333333333333329"/>
@@ -74,6 +77,9 @@
                                                                 <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                 <state key="normal" title="Button"/>
                                                                 <buttonConfiguration key="configuration" style="plain" title="%"/>
+                                                                <connections>
+                                                                    <action selector="modulus:" destination="BYZ-38-t0r" eventType="touchUpInside" id="MKb-Gm-uVf"/>
+                                                                </connections>
                                                             </button>
                                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="i7x-Ji-nXZ">
                                                                 <rect key="frame" x="295.66666666666669" y="0.0" width="97.333333333333314" height="87.333333333333329"/>
@@ -241,6 +247,9 @@
                                                                 <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                 <state key="normal" title="Button"/>
                                                                 <buttonConfiguration key="configuration" style="plain" title="."/>
+                                                                <connections>
+                                                                    <action selector="decimalPointTouched:" destination="BYZ-38-t0r" eventType="touchUpInside" id="l8T-SE-u2B"/>
+                                                                </connections>
                                                             </button>
                                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DV9-oY-chD">
                                                                 <rect key="frame" x="295.66666666666669" y="0.0" width="97.333333333333314" height="87"/>
@@ -249,7 +258,7 @@
                                                                 <state key="normal" title="Button"/>
                                                                 <buttonConfiguration key="configuration" style="plain" title="="/>
                                                                 <connections>
-                                                                    <action selector="evaluate:" destination="BYZ-38-t0r" eventType="touchUpInside" id="JCt-Ss-P3q"/>
+                                                                    <action selector="evaluate:" destination="BYZ-38-t0r" eventType="touchUpInside" id="51u-Dn-9SL"/>
                                                                 </connections>
                                                             </button>
                                                         </subviews>

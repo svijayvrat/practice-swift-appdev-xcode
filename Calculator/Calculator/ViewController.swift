@@ -101,36 +101,57 @@ class ViewController: UIViewController {
         tempStr=""
         calculatedOutput.text=numStr
     }
+    @IBAction func modulus(_ sender: Any) {
+        expression.append(tempStr)
+        expression.append("%")
+        numStr+="\(tempStr)%"
+        tempStr=""
+        calculatedOutput.text=numStr
+    }
+    @IBAction func changeSign(_ sender: Any) {
+        if tempStr.first=="-"{
+            tempStr.remove(at: tempStr.startIndex)
+        }else{
+            tempStr.insert("-", at: tempStr.startIndex)
+        }
+        calculatedOutput.text=numStr+tempStr
+    }
+    @IBAction func decimalPointTouched(_ sender: Any) {
+        tempStr+="."
+        calculatedOutput.text=numStr+tempStr
+    }
     @IBAction func evaluate(_ sender: Any) {
         expression.append(tempStr)
         let postfix:[String]=evaluatePostfix(expr: expression)
         var st=stack<String>()
         for j in 0...postfix.count-1{
             let i=postfix[postfix.index(postfix.startIndex, offsetBy: j)]
-            if i[i.startIndex]>="0" && i[i.startIndex]<="9"{
+            if i[i.index(i.endIndex, offsetBy: -1)]>="0" && i[i.index(i.endIndex, offsetBy: -1)]<="9"{
                 st.push(i)
             }else{
-                let y=Int(String(st.pop()!))!
-                let x=Int(String(st.pop()!))!
-                var res:Int=0
+                let y=Double(String(st.pop()!))!
+                let x=Double(String(st.pop()!))!
+                var res:Double=0
                 if i=="+"{
                     res=x+y
                 }else if i=="-"{
                     res=x-y
                 }else if i=="/"{
                     res=x/y
+                }else if i=="%"{
+                    res=x.truncatingRemainder(dividingBy: y)
                 }else{
                     res=x*y
                 }
                 st.push(String("\(res)"))
             }
         }
-        let res=Int(String(st.pop()!))!
+        let res=Double(String(st.pop()!))!
         calculatedOutput.text="\(res)"
         numStr=""
         pastInputs.text=""
         expression=[]
-        tempStr=""
+        tempStr="\(res)"
     }
     func evaluatePostfix(expr:[String])->[String]{
         var st=stack<String>()
@@ -139,9 +160,9 @@ class ViewController: UIViewController {
         for i in 0...expr.count-1 {
             let index=expr.index(expr.startIndex, offsetBy: i)
             let c = expr[index]
-
+            print(c)
             // If operand, add to result
-            if (c[c.startIndex] >= "0" && c[c.startIndex] <= "9"){
+            if (c[c.index(c.endIndex, offsetBy: -1)] >= "0" && c[c.index(c.endIndex, offsetBy: -1)] <= "9"){
                 res.append(String(c))
             }
             // If '(', push to stack
@@ -179,7 +200,7 @@ class ViewController: UIViewController {
     func prec(_ c:String)->Int{
         if (c == "^"){
             return 3;
-        }else if (c == "/" || c == "*"){
+        }else if (c == "/" || c == "*" || c=="%"){
                     return 2;
         }else if (c == "+" || c == "-"){
             return 1;
