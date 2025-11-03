@@ -28,6 +28,13 @@
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="W55-fr-Kxd">
+                                                <rect key="frame" x="360" y="144" width="30" height="30"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
                                         </subviews>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                         <constraints>
@@ -74,6 +81,9 @@
                                                                 <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                 <state key="normal" title="Button"/>
                                                                 <buttonConfiguration key="configuration" style="plain" title="/"/>
+                                                                <connections>
+                                                                    <action selector="division:" destination="BYZ-38-t0r" eventType="touchUpInside" id="26c-Vy-Mu0"/>
+                                                                </connections>
                                                             </button>
                                                         </subviews>
                                                     </stackView>
@@ -116,6 +126,9 @@
                                                                 <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                 <state key="normal" title="Button"/>
                                                                 <buttonConfiguration key="configuration" style="plain" title="x"/>
+                                                                <connections>
+                                                                    <action selector="multiply:" destination="BYZ-38-t0r" eventType="touchUpInside" id="WPJ-I4-DSc"/>
+                                                                </connections>
                                                             </button>
                                                         </subviews>
                                                     </stackView>
@@ -158,6 +171,9 @@
                                                                 <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                 <state key="normal" title="Button"/>
                                                                 <buttonConfiguration key="configuration" style="plain" title="-"/>
+                                                                <connections>
+                                                                    <action selector="difference:" destination="BYZ-38-t0r" eventType="touchUpInside" id="tXf-yt-aOh"/>
+                                                                </connections>
                                                             </button>
                                                         </subviews>
                                                     </stackView>
@@ -200,6 +216,9 @@
                                                                 <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                 <state key="normal" title="Button"/>
                                                                 <buttonConfiguration key="configuration" style="plain" title="+"/>
+                                                                <connections>
+                                                                    <action selector="addition:" destination="BYZ-38-t0r" eventType="touchUpInside" id="iFv-hf-ZYh"/>
+                                                                </connections>
                                                             </button>
                                                         </subviews>
                                                     </stackView>
@@ -212,6 +231,9 @@
                                                                 <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                 <state key="normal" title="Button"/>
                                                                 <buttonConfiguration key="configuration" style="plain" title="0"/>
+                                                                <connections>
+                                                                    <action selector="zeroTouched:" destination="BYZ-38-t0r" eventType="touchUpInside" id="DNE-dM-HmZ"/>
+                                                                </connections>
                                                             </button>
                                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="03t-K7-vk7">
                                                                 <rect key="frame" x="197" y="0.0" width="97.666666666666686" height="87"/>
@@ -226,6 +248,9 @@
                                                                 <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                 <state key="normal" title="Button"/>
                                                                 <buttonConfiguration key="configuration" style="plain" title="="/>
+                                                                <connections>
+                                                                    <action selector="evaluate:" destination="BYZ-38-t0r" eventType="touchUpInside" id="JCt-Ss-P3q"/>
+                                                                </connections>
                                                             </button>
                                                         </subviews>
                                                     </stackView>
@@ -259,6 +284,8 @@
                     </view>
                     <connections>
                         <outlet property="calculatedOutput" destination="ClU-eA-jKy" id="yyP-58-gla"/>
+                        <outlet property="pastInputs" destination="W55-fr-Kxd" id="huj-QU-5dN"/>
+                        <outlet property="zero" destination="0bj-WV-0ZY" id="Ozl-lI-qDW"/>
                         <outletCollection property="buttonOneRow" destination="iRS-8V-aap" collectionClass="NSMutableArray" id="43w-cA-YoU"/>
                         <outletCollection property="buttonOneRow" destination="ipA-Ze-NYM" collectionClass="NSMutableArray" id="2GS-zE-dSk"/>
                         <outletCollection property="buttonOneRow" destination="4Rf-DB-rdN" collectionClass="NSMutableArray" id="SMP-yA-Ggg"/>
