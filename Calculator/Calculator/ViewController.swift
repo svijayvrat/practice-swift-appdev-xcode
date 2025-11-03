@@ -139,11 +139,11 @@ class ViewController: UIViewController {
                 }else if i=="/"{
                     res=x/y
                 }else if i=="%"{
-                    res=x.truncatingRemainder(dividingBy: y)
+                    res=y.truncatingRemainder(dividingBy: x)
                 }else{
                     res=x*y
                 }
-                st.push(String("\(res)"))
+                st.push("\(res)")
             }
         }
         let res=Double(String(st.pop()!))!
