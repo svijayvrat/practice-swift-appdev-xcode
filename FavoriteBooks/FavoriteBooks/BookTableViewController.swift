@@ -6,6 +6,7 @@ class BookTableViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        navigationItem.leftBarButtonItem = editButtonItem
 
     }
     
@@ -23,7 +24,6 @@ class BookTableViewController: UITableViewController {
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "BookCell", for: indexPath)
-
         let book = books[indexPath.row]
         var content = cell.defaultContentConfiguration()
         content.text = book.title

@@ -11,10 +11,10 @@ class BookFormTableViewController: UITableViewController {
     
     var book: Book?
     
-    @IBOutlet weak var bookTitle: UILabel!
-    @IBOutlet weak var author: UILabel!
-    @IBOutlet weak var genre: UILabel!
-    @IBOutlet weak var length: UILabel!
+    @IBOutlet weak var bookTitle:UITextField!
+    @IBOutlet weak var author:UITextField!
+    @IBOutlet weak var genre:UITextField!
+    @IBOutlet weak var length:UITextField!
     
     init?(coder: NSCoder, book: Book?) {
         self.book = book
@@ -39,7 +39,9 @@ class BookFormTableViewController: UITableViewController {
         guard let title = bookTitle.text,
             let author = author.text,
             let genre = genre.text,
-            let length = length.text else {return}
+            let length = length.text
+        else {return}
+        print(title,author,genre,length)
         
         book = Book(title: title, author: author, genre: genre, length: length)
         performSegue(withIdentifier: "UnwindToBookTable", sender: self)
