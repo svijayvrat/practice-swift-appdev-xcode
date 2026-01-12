@@ -30,7 +30,7 @@ struct RoomType{
 }
 
 //Data Model - Registration Details
-struct registration{
+struct Registration{
     var firstName: String
     var lastName: String
     var email: String
