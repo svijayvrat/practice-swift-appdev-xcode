@@ -9,17 +9,15 @@ import UIKit
 
 class RegistrationsTableViewController: UITableViewController {
     
-    var registrations: [Registration] = [Registration(firstName: "John", lastName: "Doe", email: "johndoe@xyz", checkInDate: Date(), checkOutDate: Date(), adultCount: 1, childrenCount: 0, wifi: true , roomType: RoomType(twoQueens: false, oneKing: true, pentHouseSuite: false))]
     
     override func viewDidLoad() {
         super.viewDidLoad()
         navigationItem.title = "Registrations"
-
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem
+        
+    }
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        tableView.reloadData()
     }
 
     // MARK: - Table view data source
@@ -39,56 +37,24 @@ class RegistrationsTableViewController: UITableViewController {
         let reg = registrations[indexPath.row]
         var content = cell.defaultContentConfiguration()
         content.text = "\(reg.firstName) \(reg.lastName)"
-        content.secondaryText = "\(reg.roomType.twoQueens ? "Two Queens" : reg.roomType.oneKing ? "One King" : "Pent House Suite") : \(reg.checkInDate.formatted(date: .abbreviated, time: .omitted)) - \(reg.checkOutDate.formatted(date: .abbreviated, time: .omitted))"
-        print(reg.firstName)
+        var room:String = ""
+        if reg.roomType.oneKing == true{
+            room = "One King"
+        }else if reg.roomType.twoQueens == true{
+            room = "Two Queens"
+        }else if reg.roomType.pentHouseSuite == true{
+            room = "Pent House Suite"
+        }else{
+            room = "No room"
+        }
+        content.secondaryText = "\(reg.checkInDate.formatted(date: .abbreviated, time: .omitted)) - \(reg.checkOutDate.formatted(date: .abbreviated, time: .omitted)) : \(room)"
         cell.contentConfiguration = content
         // Configure the cell...
         return cell
     }
 
-    /*
-    // Override to support conditional editing of the table view.
-    override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
-        // Return false if you do not want the specified item to be editable.
-        return true
+    @IBAction func unwindAction(segue: UIStoryboardSegue){
+        viewWillAppear(true)
     }
-    */
-
-    /*
-    // Override to support editing the table view.
-    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
-        if editingStyle == .delete {
-            // Delete the row from the data source
-            tableView.deleteRows(at: [indexPath], with: .fade)
-        } else if editingStyle == .insert {
-            // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-        }    
-    }
-    */
-
-    /*
-    // Override to support rearranging the table view.
-    override func tableView(_ tableView: UITableView, moveRowAt fromIndexPath: IndexPath, to: IndexPath) {
-
-    }
-    */
-
-    /*
-    // Override to support conditional rearranging of the table view.
-    override func tableView(_ tableView: UITableView, canMoveRowAt indexPath: IndexPath) -> Bool {
-        // Return false if you do not want the item to be re-orderable.
-        return true
-    }
-    */
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
+    
 }

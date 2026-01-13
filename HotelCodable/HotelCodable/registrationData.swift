@@ -49,3 +49,7 @@ struct Registration{
         return Calendar.current.dateComponents([.day], from: checkInDate, to: checkOutDate).day! + 1
     }
 }
+var registrations: [Registration] = [Registration(firstName: "John", lastName: "Doe", email: "johndoe@xyz", checkInDate: Date(), checkOutDate: Date(), adultCount: 1, childrenCount: 0, wifi: true , roomType: RoomType(twoQueens: false, oneKing: true, pentHouseSuite: false))]
+
+var roomType:RoomType = RoomType(twoQueens: false, oneKing: false, pentHouseSuite: false)
+var settedRoomType:Bool = false
