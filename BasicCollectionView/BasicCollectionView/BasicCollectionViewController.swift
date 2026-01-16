@@ -9,9 +9,11 @@ import UIKit
 
 private let reuseIdentifier = "Cell"
 
-class BasicCollectionViewController: UICollectionViewController {
+class BasicCollectionViewController: UICollectionViewController, UISearchResultsUpdating {
 
-    var items = [ "Alabama", "Alaska", "Arizona", "Arkansas", "California", "Colorado", "Connecticut", "Delaware", "Florida", "Georgia", "Hawaii", "Idaho", "Illinois", "Indiana", "Iowa", "Kansas", "Kentucky", "Louisiana", "Maine", "Maryland", "Massachusetts", "Michigan", "Minnesota", "Mississippi", "Missouri", "Montana", "Nebraska", "Nevada", "New Hampshire", "New Jersey", "New Mexico", "New York", "North Carolina", "North Dakota", "Ohio", "Oklahoma", "Oregon", "Pennsylvania", "Rhode Island", "South Carolina", "South Dakota", "Tennessee", "Texas", "Utah", "Vermont", "Virginia", "Washington", "West Virginia", "Wisconsin", "Wyoming" ]
+    
+    
+    let searchController = UISearchController()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -20,7 +22,13 @@ class BasicCollectionViewController: UICollectionViewController {
         // self.clearsSelectionOnViewWillAppear = false
 
         // Do any additional setup after loading the view.
-        collectionView.setCollectionViewLayout(generateLayout(), animated: false)
+        navigationItem.searchController = searchController
+        searchController.obscuresBackgroundDuringPresentation = false
+        searchController.searchResultsUpdater = self
+        navigationItem.hidesSearchBarWhenScrolling = false
+     
+        let layout = generateLayout()
+        collectionView.setCollectionViewLayout(layout, animated: true)
     }
 
     private func generateLayout() -> UICollectionViewLayout {
@@ -39,6 +47,17 @@ class BasicCollectionViewController: UICollectionViewController {
         let layout = UICollectionViewCompositionalLayout(section: section)
         
         return layout
+    }
+    
+    func updateSearchResults(for searchController: UISearchController) {
+        if let searchString = searchController.searchBar.text, searchString.isEmpty == false {
+            filteredItems = items.filter{ (item) -> Bool in
+                item.localizedStandardContains(searchString)
+            }
+        }else{
+            filteredItems = items
+        }
+        collectionView.reloadData()
     }
     
     /*
@@ -61,17 +80,17 @@ class BasicCollectionViewController: UICollectionViewController {
 
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of items
-        return items.count
+        return filteredItems.count
     }
 
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath) as! BasicCollectionViewCell
-        cell.label.text = items[indexPath.item]
+        
+        cell.label.text = filteredItems[indexPath.item]
         // Configure the cell
     
         return cell
     }
-
     // MARK: UICollectionViewDelegate
 
     /*
