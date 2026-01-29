@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="24506" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="24504"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="gTV-IL-0wX" customClass="CuisineCollectionViewCell" customModule="restaurantApp" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="276" height="146"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="276" height="146"/>
+                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <subviews>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Qpl-CC-rqy">
+                        <rect key="frame" x="0.0" y="0.0" width="276" height="146"/>
+                    </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rdp-iZ-sQm">
+                        <rect key="frame" x="0.0" y="116.66666666666667" width="276" height="29.333333333333329"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.39827244719999999" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+            </view>
+            <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
+            <constraints>
+                <constraint firstItem="rdp-iZ-sQm" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="4uM-6H-rCg"/>
+                <constraint firstAttribute="bottom" secondItem="Qpl-CC-rqy" secondAttribute="bottom" id="DSv-id-7lF"/>
+                <constraint firstAttribute="bottom" secondItem="rdp-iZ-sQm" secondAttribute="bottom" id="P9l-kO-pgs"/>
+                <constraint firstAttribute="trailing" secondItem="Qpl-CC-rqy" secondAttribute="trailing" id="RsL-30-5U0"/>
+                <constraint firstAttribute="trailing" secondItem="rdp-iZ-sQm" secondAttribute="trailing" id="Wxc-V7-IGW"/>
+                <constraint firstItem="Qpl-CC-rqy" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="ZsB-5S-Isd"/>
+                <constraint firstItem="Qpl-CC-rqy" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="fUw-W6-q9Y"/>
+                <constraint firstItem="rdp-iZ-sQm" firstAttribute="height" secondItem="Qpl-CC-rqy" secondAttribute="height" multiplier="0.2" id="hjT-Ao-gP3"/>
+            </constraints>
+            <size key="customSize" width="276" height="146"/>
+            <connections>
+                <outlet property="imageLabel" destination="rdp-iZ-sQm" id="0k4-9x-AxZ"/>
+                <outlet property="imageView" destination="Qpl-CC-rqy" id="nYk-ld-4ak"/>
+            </connections>
+            <point key="canvasLocation" x="9.1603053435114496" y="187.32394366197184"/>
+        </collectionViewCell>
+    </objects>
+</document>
